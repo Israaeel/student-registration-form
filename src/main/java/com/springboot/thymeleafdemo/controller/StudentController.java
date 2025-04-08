@@ -13,6 +13,9 @@ import java.util.List;
 @Controller
 public class StudentController {
 
+    @Value("${languages}")
+    private List<String> languages;
+
     @Value("${countries}")
     private List<String> countries;
 
@@ -27,6 +30,9 @@ public class StudentController {
 
         // add the list of countries to the model
         theModel.addAttribute("countries", countries);
+
+        // add the list of languages to the model
+        theModel.addAttribute("languages", languages);
 
         return "student-form";
     }
